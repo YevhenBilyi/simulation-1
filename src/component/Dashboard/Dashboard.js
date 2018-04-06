@@ -10,7 +10,7 @@ class Dashboard extends Component {
       })
     return (
       <div className="Dashboard">
-        Dashboard
+    
         
         {products}
       </div>
