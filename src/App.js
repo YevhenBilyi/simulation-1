@@ -27,7 +27,7 @@ class App extends Component {
       <Header/>
       </div>
       <div className="Dashboard">
-      <Dashboard inventory={this.state.inventory}/>
+      <Dashboard inventory={this.state.inventory} refresh={this.componentDidMount}/>
       </div>
       <div className="Form">
       <Form refresh={this.componentDidMount}/>

@@ -17,6 +17,13 @@ module.exports={
         dbInstance.create_product([name, price, imageurl])
         .then(()=>res.status(200).send())
         .catch(()=>res.status(500).send());
+    },
+    delete:(req,res,next)=>{
+        const dbInstance=req.app.get('db')
+        const{id}=req.params
 
+        dbInstance.delete_product([id])
+        .then(()=>res.status(200).send())
+        .catch(()=>res.status(500).send())
     }
 }

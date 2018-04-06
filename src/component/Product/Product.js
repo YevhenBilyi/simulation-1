@@ -11,6 +11,7 @@ export default function Product (props) {
       <img src={props.image} alt="image"/>
         <h1> {props.name} </h1>
         <h2>${props.price} </h2>
+      <button onClick={()=>props.delete(props.id)}> Delete </button>
         </div>
        
       </div>
