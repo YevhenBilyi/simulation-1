@@ -12,9 +12,9 @@ module.exports={
     },
     create:(req,res,next)=>{
         const dbInstance=req.app.get('db');
-        const{name, description, price, imageurl}=req.body
+        const{name, price, imageurl}=req.body
 
-        dbInstance.create_product([name, description, price, imageurl])
+        dbInstance.create_product([name, price, imageurl])
         .then(()=>res.status(200).send())
         .catch(()=>res.status(500).send());
 

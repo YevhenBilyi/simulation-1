@@ -1,0 +1,32 @@
+.Form1{
+    margin: 50px;
+    background-color: #3AD886;
+    height: 73vh;
+    width: 30vw;
+    border-radius: 8px;
+    
+}
+.Form1 img{
+    margin-top:20px;
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    border: black solid 1px;
+}
+.Form1 p{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 1.1em
+}
+.Form1 input{
+    width: 90%;
+}
+.Form1 button{
+    margin: 20px;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    color: black;
+    background-color: #ED6B5A;
+    font-size: 1em;
+}

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from'axios';
+import './Form.css'
 
 
 
@@ -11,6 +13,7 @@ class Form extends Component {
             imgurl:''
         }
           this.clearInputs=this.clearInputs.bind(this);
+          this.addProduct=this.addProduct.bind(this);
     }
   
     handleName(e){
@@ -29,14 +32,31 @@ class Form extends Component {
             imgurl:''
         })
     }
+    addProduct(){
+        let product={
+            name: this.state.name,
+            price: this.state.price,
+            imageurl: this.state.imgurl
+        }
+       
+        axios.post("/api/product", product).then(res=>{
+            this.props.refresh()
+            this.clearInputs()
+        }).catch((err)=>console.log("cannot post"+err))
+    }
   render() {
     return (
-      <div className="Form">
-        Form
+      <div className="Form1">
+      <div id='top'>
+      <img src="" alt=""/>
+        <p> Name:</p>
         <input value={this.state.name} onChange={e=>this.handleName(e.target.value)} type='text'/>
+        <p> Price </p>
         <input value={this.state.price} onChange={e=>this.handlePrice(e.target.value)} type='number'/>
+        <p> Image URL </p>
         <input value={this.state.imgurl} onChange={e=>this.handleImage(e.target.value)} type='text'/>
-        <button>Add to inventory</button>
+     </div>
+        <button onClick={this.addProduct}>Add to inventory</button>
         <button onClick={this.clearInputs}> Cancel </button>
       </div>
     );
